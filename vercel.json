@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "bonkamigos-web",
   "builds": [
     {
       "src": "*.html",
@@ -49,7 +48,6 @@
       ]
     }
   ],
-  "functions": {},
   "env": {
     "NODE_ENV": "production"
   }
