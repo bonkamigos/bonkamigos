@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bonkamigos - The degenerate dogs of Solana. Where BONK meets Nakamigos." />
+  <meta name="keywords" content="Bonkamigos, NFT, Solana, BONK, Nakamigos, crypto, blockchain" />
+  <meta property="og:title" content="Bonkamigos" />
+  <meta property="og:description" content="The degenerate dogs of Solana. Where BONK meets Nakamigos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bonkamigos.xyz" />
+  <meta property="og:image" content="https://d1w8o7f1ix0z4v.cloudfront.net/bonkamigos-1of1-glitchdog.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Bonkamigos - The Degenerate Dogs of Solana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>">
+  <style>
+    :root {
+      --primary: #f97316;
+      --secondary: #22c55e;
+      --accent: #fbbf24;
+      --background: #fef3c7;
+      --text: #111827;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --gradient: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
+      --gradient-dark: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+      --glow: 0 0 20px rgba(249, 115, 22, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .pixel-font {
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    /* Header */
+    header {
+      background: var(--gradient);
+      color: var(--white);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--white);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--gradient);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(1deg); }
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); }
+      to { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.5); }
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+
+    .countdown {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: fadeInUp 1s ease-out 1s both;
+    }
+
+    .countdown h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      text-align: center;
+      min-width: 90px;
+      padding: 0.5rem;
+    }
+
+    .countdown-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      word-wrap: break-word;
+    }
+
+    /* Sections */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--primary);
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* NFT Grid */
+    .nft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .nft-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nft-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .nft-card:hover::before {
+      left: 100%;
+    }
+
+    .nft-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .nft-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .nft-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .nft-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      line-height: 1.2;
+      word-wrap: break-word;
+    }
+
+    .rarity-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rarity-ultra {
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      color: #000;
+    }
+
+    .rarity-rare {
+      background: linear-gradient(45deg, #c084fc, #a855f7);
+      color: white;
+    }
+
+    .rarity-common {
+      background: linear-gradient(45deg, #6b7280, #9ca3af);
+      color: white;
+    }
+
+    .rarity-uncommon {
+      background: linear-gradient(45deg, #22c55e, #16a34a);
+      color: white;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--secondary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+    }
+
+    .btn-secondary {
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--gray);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.85rem;
+      line-height: 1.2;
+      word-wrap: break-word;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+      margin-top: 5rem;
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-content h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      color: var(--white);
+      font-size: 2rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      .nft-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .countdown-timer {
+        gap: 0.5rem;
+      }
+
+      .countdown-item {
+        min-width: 70px;
+        padding: 0.3rem;
+      }
+
+      .countdown-number {
+        font-size: 1.4rem;
+      }
+
+      .countdown-label {
+        font-size: 0.7rem;
+      }
+
+      .stat-number {
+        font-size: 1.8rem;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Loading animation */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--white);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--white);
+      font-size: 0.9rem;
+      opacity: 0.8;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Particle effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: float-particle 6s infinite linear;
+    }
+
+    @keyframes float-particle {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo pixel-font">BONKAMIGOS</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#mint">Mint</a></li>
+          <li><a href="#preview">Preview</a></li>
+          <li><a href="#utility">Utility</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <h1 class="pixel-font">BONKAMIGOS</h1>
+      <p>The degenerate dogs of Solana. Where BONK meets Nakamigos.</p>
+      
+      <div class="countdown">
+        <h3>🚀 Mint Launch Countdown</h3>
+        <div class="countdown-timer" id="countdown">
+          <div class="countdown-item">
+            <div class="countdown-number" id="days">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="hours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="#mint" class="btn btn-primary">Mint Now</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll to explore ↓</div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="pixel-font">About the Pack</h2>
+    <p>Bonkamigos is a 20K NFT collection of pixel-art dogs living on Solana. Inspired by the structure of Nakamigos and the culture of BONK. Built for memelords, collectors, and terminally online degens.</p>
+    
+    <div class="stats">
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">20,000</div>
+        <div class="stat-label">Total Supply</div>
+      </div>
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">Solana</div>
+        <div class="stat-label">Blockchain</div>
+      </div>
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">$BONKAMIGOS</div>
+        <div class="stat-label">Native Token</div>
+      </div>
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Unique Traits</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mint" class="section">
+    <h2 class="pixel-font">Mint Your Bonkamigo</h2>
+    <p>Join the pack and mint your very own degenerate dog. Each Bonkamigo is unique and comes with exclusive utility.</p>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://launchmynft.io/" target="_blank" class="btn btn-primary">Mint on LaunchMyNFT</a>
+    </div>
+  </section>
+
+  <section id="preview" class="section">
+    <h2 class="pixel-font">Preview Collection</h2>
+    <p>Take a look at some of our unique Bonkamigos from the collection.</p>
+    
+    <div class="nft-grid">
+      <div class="nft-card fade-in-up">
+        <img src="https://d1w8o7f1ix0z4v.cloudfront.net/bonkamigos-1of1-glitchdog.png" alt="Bonkamigo 1-of-1 Glitch Dog" loading="lazy" />
+        <h3>Glitch Dog</h3>
+        <span class="rarity-badge rarity-ultra">1-of-1 Ultra Rare</span>
+      </div>
+      <div class="nft-card fade-in-up">
+        <img src="https://d1w8o7f1ix0z4v.cloudfront.net/bonkamigos-random1.png" alt="Bonkamigo NFT Random 1" loading="lazy" />
+        <h3>Alpha Dog</h3>
+        <span class="rarity-badge rarity-rare">Rare Trait</span>
+      </div>
+      <div class="nft-card fade-in-up">
+        <img src="https://d1w8o7f1ix0z4v.cloudfront.net/bonkamigos-random2.png" alt="Bonkamigo NFT Random 2" loading="lazy" />
+        <h3>Beta Dog</h3>
+        <span class="rarity-badge rarity-common">Common Trait</span>
+      </div>
+      <div class="nft-card fade-in-up">
+        <img src="https://d1w8o7f1ix0z4v.cloudfront.net/bonkamigos-random3.png" alt="Bonkamigo NFT Random 3" loading="lazy" />
+        <h3>Gamma Dog</h3>
+        <span class="rarity-badge rarity-uncommon">Uncommon Trait</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="utility" class="section">
+    <h2 class="pixel-font">Token Utility</h2>
+    <p>$BONKAMIGOS is the native coin of the pack. Use it for raffles, staking, merch drops, and BONK-fueled shenanigans. It's dog season forever.</p>
+    
+    <div class="stats">
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">🎰</div>
+        <div class="stat-label">Raffles</div>
+      </div>
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">💰</div>
+        <div class="stat-label">Staking</div>
+      </div>
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">🛍️</div>
+        <div class="stat-label">Merch Drops</div>
+      </div>
+      <div class="stat-card fade-in-up">
+        <div class="stat-number">🎉</div>
+        <div class="stat-label">Community Events</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <h3 class="pixel-font">BONKAMIGOS</h3>
+      <p>The degenerate dogs of Solana</p>
+      
+      <div class="social-links">
+        <a href="https://x.com/Bonkamigos" target="_blank" title="Twitter/X">🐦</a>
+        <a href="#" title="Discord">💬</a>
+        <a href="#" title="Telegram">📱</a>
+        <a href="https://bonkamigos.xyz" title="Website">🌐</a>
+      </div>
+      
+      <p>&copy; 2025 Bonkamigos. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    function updateCountdown() {
+      const now = new Date().getTime();
+      
+      // Set launch time to 8 PM CST tonight
+      const today = new Date();
+      const launchDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 20, 0, 0); // 8 PM = 20:00
+      
+      // Adjust for CST timezone (UTC-6)
+      const cstOffset = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
+      const launchTime = launchDate.getTime() - cstOffset;
+      
+      const distance = launchTime - now;
+
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+      } else {
+        document.getElementById('countdown').innerHTML = '<div style="font-size: 2rem; font-weight: bold; color: #22c55e;">🚀 MINT IS LIVE! 🚀</div>';
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Particle Effect
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    createParticles();
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in-up elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Header background change on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(249, 115, 22, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+      } else {
+        header.style.background = 'var(--gradient)';
+        header.style.backdropFilter = 'none';
+      }
+    });
+
+    // Add loading state to buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (this.href && this.href.includes('launchmynft.io')) {
+          this.innerHTML = '<span class="loading"></span> Redirecting...';
+          setTimeout(() => {
+            this.innerHTML = 'Mint on LaunchMyNFT';
+          }, 2000);
+        }
+      });
+    });
+
+    // Parallax effect for hero section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.hero');
+      const rate = scrolled * -0.5;
+      hero.style.transform = `translateY(${rate}px)`;
+    });
+
+    // Add hover sound effect (optional)
+    document.querySelectorAll('.btn, .nft-card, .stat-card').forEach(element => {
+      element.addEventListener('mouseenter', function() {
+        this.style.transform = this.style.transform + ' scale(1.02)';
+      });
+      
+      element.addEventListener('mouseleave', function() {
+        this.style.transform = this.style.transform.replace(' scale(1.02)', '');
+      });
+    });
+
+    // Typing effect for hero title
+    function typeWriter(element, text, speed = 100) {
+      let i = 0;
+      element.innerHTML = '';
+      
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      
+      type();
+    }
+
+    // Initialize typing effect when page loads
+    window.addEventListener('load', () => {
+      const heroTitle = document.querySelector('.hero h1');
+      const originalText = heroTitle.textContent;
+      typeWriter(heroTitle, originalText, 150);
+    });
+  </script>
+</body>
+</html>
